@@ -1,0 +1,23 @@
+<div *ngIf="ability">
+	Gesamtlernzeit bis zur jeweiligen Stufe, abhängig von der Lerntechnik:
+	(Angaben in Tagen:Stunden:Minuten):
+	<table border="1"
+		*ngIf="detailedTableColums && detailedTableColums.length > 0">
+		<tr>
+			<td></td>
+			<td colspan="11">Lerntechnik</td>
+		</tr>
+		<tr>
+			<th>Stufe</th>
+			<th *ngFor="let learningTechniqueLevel of detailedTableColumLabels">
+				{{learningTechniqueLevel}}</th>
+		</tr>
+		<tr *ngFor="let levelDetail of detailedTableColums">
+			<td>{{levelDetail.level}}</td>
+			<td *ngFor="let levelTechniqueDetail of levelDetail.cells">{{
+				levelTechniqueDetail.neededTime | formatDelay }}</td>
+		</tr>
+	</table>
+
+
+</div>

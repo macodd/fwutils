@@ -1,0 +1,12 @@
+<div *ngIf="ability">
+	<h2 class="abilityHeadline">{{ability.name}}</h2>
+	<div class="abilityMaxLevel">
+		<span class="abilityMaxLevelName">Maximalstufe:</span><span
+			id="abilityMaxLevelValue">{{ability.maxLevel}}</span>
+	</div>
+
+	<fwts-ability-levels-isolated [ability]=ability></fwts-ability-levels-isolated>
+	<fwts-ability-levels-total [ability]=ability></fwts-ability-levels-total>
+	<fwts-ability-level-single [ability]=ability></fwts-ability-level-single>
+
+</div>

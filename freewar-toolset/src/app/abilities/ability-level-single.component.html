@@ -1,0 +1,16 @@
+<div *ngIf="ability">
+	<label>Stufe:</label> <select
+		(change)="onChangeAbilityLevel($event.target.value)">
+		<option *ngFor="let abilityLevel of abilityLevels"
+			[value]="abilityLevel">{{abilityLevel}}</option>
+	</select> <br /> <label>Stufe Lerntechnik:</label> <select
+		(change)="onChangeLearningTechniqueLevel($event.target.value)">
+		<option *ngFor="let learingTechniqueLevel of learingTechniqueLevels"
+			[value]="learingTechniqueLevel">{{learingTechniqueLevel}}</option>
+	</select> <br /> 
+	<span>Die Gesamtlernzeit für das Training auf Stufe
+	{{selectedAbilityLevel}} mit Lerntechnik Stufe
+	{{selectedLearingTechniqueLevel}} dauert {{totalTimeNeededDelay |
+	formatDelay:'detail'}}. Gegenüber dem Training mit Lerntechnik auf Stufe 0 wurde
+	{{savedTimeDelay | formatDelay:'detail'}} gespart.</span>
+</div>
