@@ -1,0 +1,62 @@
+server:
+    port: 9000
+
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/fwdb
+        username: fwdb
+        password: fwdb
+    jpa:
+        show-sql: true
+        generate-ddl: false
+        hibernate:
+            ddl-auto: validate
+
+parser:
+    user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0
+    timeout: 10000
+
+wiki:
+    url: http://www.fwwiki.de
+    categories:
+            npcs: 
+                location: /index.php/Kategorie:NPCs
+                skip-limit: 50
+                exclusions:
+                    - /index.php/Aggressive_NPCs
+                    - /index.php/Auftrags-NPC
+                    - /index.php/Gruppen-NPC
+                    - /index.php/Haustier
+                    - /index.php/Invasions-NPC
+                    - /index.php/NPC
+                    - /index.php/Phasenwesen
+                    - /index.php/Resistenz-NPC
+                    - /index.php/Schlag
+                    - /index.php/Schotterwurm/Ereignis
+                    - /index.php/Teilimmunit%C3%A4t
+                    - /index.php/Unangreifbare_NPCs
+                    - /index.php/Unique-NPC
+                    - /index.php/Vollimmunit%C3%A4t  
+                    - /index.php/T%C3%A4nzerin_von_Beispieluser                  
+            abilities: 
+                location: /index.php/Kategorie:Charakterf%C3%A4higkeiten
+                skip-limit: 5
+                exclusions:
+                    - /index.php/Auftragsbeziehungen/Kopf
+                    - /index.php/Auftragsbeziehungen/Nutzen
+                    - /index.php/Auftragsbeziehungen/Zelle
+                    - /index.php/Buch
+                    - /index.php/Charakterf%C3%A4higkeit
+                    - /index.php/Charakterf%C3%A4higkeit/Anzahl
+                    - /index.php/Handwerkskunst/Max-Stufe
+            offence-arms: 
+                location: /index.php/Kategorie:Angriffswaffen
+                skip-limit: 10
+                exclusions:
+                    - /index.php/Angriffswaffe
+            defence-arms: 
+                location: /index.php/Kategorie:Verteidigungswaffen
+                skip-limit: 10
+                exclusions:
+                    - /index.php/Deutschland-Trikot_(W11)
+                    - /index.php/Verteidigungswaffe
