@@ -1,4 +1,4 @@
-package de.higger.fwutils.wiki.load;
+package de.higger.fwutils.wiki.batch;
 
 import javax.sql.DataSource;
 
