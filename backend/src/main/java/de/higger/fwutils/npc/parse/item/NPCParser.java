@@ -13,22 +13,22 @@ import de.higger.fwutils.wiki.exception.ItemParseException;
 import de.higger.fwutils.wiki.parse.Hyperlink;
 import de.higger.fwutils.wiki.parse.ItemParser;
 
-public class NPCParser implements ItemParser<NPC> {
+public class NPCParser implements ItemParser<NPCItem> {
 
 	private static final Logger LOG = LoggerFactory.getLogger(NPCParser.class);
 
 	private final Pattern intervalPattern = Pattern.compile("([^0-9]*)([\\.0-9]+[ -]*[\\.0-9]*)([^0-9]*)");
 
 	@Override
-	public NPC parseItem(final Hyperlink hyperlink, final Document doc) throws ItemParseException {
+	public NPCItem parseItem(final Hyperlink hyperlink, final Document doc) throws ItemParseException {
 
-		final NPC npc = new NPC(hyperlink.getRelativeLocation());
+		final NPCItem npc = new NPCItem(hyperlink.getRelativeLocation());
 
 		final Element npcLayout = doc.select("div#mw-content-text").first();
 
 		final Element npcDesc = npcLayout.select("div.layout_desc").first();
 		if (npcDesc == null) {
-			new ItemParseException(NPC.class.getSimpleName(), hyperlink);
+			new ItemParseException(NPCItem.class.getSimpleName(), hyperlink);
 		}
 
 		final Elements details = npcDesc.select("p");

@@ -1,21 +1,39 @@
 package de.higger.fwutils.npc.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.higger.fwutils.npc.service.NPCImportService;
+import de.higger.fwutils.common.service.RestControllerMappingService;
+import de.higger.fwutils.npc.entity.NPC;
+import de.higger.fwutils.npc.repository.NPCRepository;
 
 @RestController
-@RequestMapping("/api/v1/public/npc")
+@RequestMapping("/api/v1/public/npcs")
 public class NPCController {
 
-	@Autowired
-	private NPCImportService npcImportService;
+	private static final String PARAM_NPC_ID = "npcId";
 
-	@PostMapping("/import")
-	public void importNPCs() {
-		npcImportService.importNPCs();
+	@Autowired
+	private NPCRepository npcRepository;
+
+	@Autowired
+	private RestControllerMappingService restControllerMappingService;
+
+	@GetMapping
+	public Iterable<NPC> getAllNPCs() {
+		return npcRepository.findAll();
+	}
+
+	@GetMapping("/{npcId}")
+	public ResponseEntity<NPC> getNPCById(@PathVariable(PARAM_NPC_ID) final long npcId) {
+
+		final Optional<NPC> npc = npcRepository.findById(npcId);
+		return restControllerMappingService.toResponseEntity(npc);
 	}
 }

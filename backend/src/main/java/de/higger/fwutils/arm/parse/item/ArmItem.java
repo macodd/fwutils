@@ -2,7 +2,7 @@ package de.higger.fwutils.arm.parse.item;
 
 import de.higger.fwutils.wiki.parse.ParseItem;
 
-public class Arm extends ParseItem {
+public class ArmItem extends ParseItem {
 
 	private static final long serialVersionUID = -6140338063523970449L;
 
@@ -14,7 +14,7 @@ public class Arm extends ParseItem {
 	private String requiredRace;
 	private final ArmType armType;
 
-	public Arm(final String url, final ArmType armType) {
+	public ArmItem(final String url, final ArmType armType) {
 		super(url);
 		this.armType = armType;
 	}

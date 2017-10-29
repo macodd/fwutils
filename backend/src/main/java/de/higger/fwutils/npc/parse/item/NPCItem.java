@@ -2,7 +2,7 @@ package de.higger.fwutils.npc.parse.item;
 
 import de.higger.fwutils.wiki.parse.ParseItem;
 
-public class NPC extends ParseItem {
+public class NPCItem extends ParseItem {
 
 	private static final long serialVersionUID = 3057239845992900635L;
 
@@ -16,7 +16,7 @@ public class NPC extends ParseItem {
 
 	private Integer droppedMoney;
 
-	public NPC(final String url) {
+	public NPCItem(final String url) {
 		super(url);
 	}
 
