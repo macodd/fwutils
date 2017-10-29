@@ -14,7 +14,7 @@ import de.higger.fwutils.wiki.parse.Hyperlink;
 
 public class NPCParser implements ItemParser<NPC> {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ArmParser.class);
+	private static final Logger LOG = LoggerFactory.getLogger(NPCParser.class);
 
 	private final Pattern intervalPattern = Pattern.compile("([^0-9]*)([\\.0-9]+[ -]*[\\.0-9]*)([^0-9]*)");
 
@@ -54,7 +54,9 @@ public class NPCParser implements ItemParser<NPC> {
 				npc.setMaxStrength(Integer.parseInt(maxStrength));
 			}
 		} else {
-			LOG.warn("Failed to parse health at NPC on item {} ", npc.toString());
+			npc.setMinStrength(0);
+			npc.setMaxStrength(Integer.MAX_VALUE);
+			LOG.warn("Failed to parse strength at NPC on item {} ", npc.toString());
 		}
 
 		final Element moneyDesc = npcLayout.select("div.layout_money p").first();
@@ -83,6 +85,8 @@ public class NPCParser implements ItemParser<NPC> {
 				npc.setMinHealth(Integer.parseInt(minHealth));
 				npc.setMaxHealth(Integer.parseInt(maxHealth));
 			} else {
+				npc.setMinHealth(0);
+				npc.setMaxHealth(Integer.MAX_VALUE);
 				LOG.warn("Failed to parse health at NPC on item {} ", npc.toString());
 			}
 		}

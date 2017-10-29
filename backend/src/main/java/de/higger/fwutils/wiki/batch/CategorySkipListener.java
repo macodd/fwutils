@@ -1,4 +1,4 @@
-package de.higger.fwutils.wiki.load;
+package de.higger.fwutils.wiki.batch;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

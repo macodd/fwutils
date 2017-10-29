@@ -1,4 +1,4 @@
-package de.higger.fwutils.wiki.load;
+package de.higger.fwutils.wiki.batch;
 
 import org.jsoup.nodes.Document;
 import org.springframework.batch.item.ItemProcessor;
