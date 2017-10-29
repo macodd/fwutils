@@ -1,9 +1,8 @@
-package de.higger.fwutils.wiki.parse.item;
+package de.higger.fwutils.wiki.parse;
 
 import org.jsoup.nodes.Document;
 
 import de.higger.fwutils.wiki.exception.ItemParseException;
-import de.higger.fwutils.wiki.parse.Hyperlink;
 
 public interface ItemParser<T extends ParseItem> {
 

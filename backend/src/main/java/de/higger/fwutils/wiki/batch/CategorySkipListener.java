@@ -6,7 +6,7 @@ import org.slf4j.helpers.MessageFormatter;
 import org.springframework.batch.core.SkipListener;
 
 import de.higger.fwutils.wiki.parse.Hyperlink;
-import de.higger.fwutils.wiki.parse.item.ParseItem;
+import de.higger.fwutils.wiki.parse.ParseItem;
 
 public class CategorySkipListener implements SkipListener<Hyperlink, ParseItem> {
 

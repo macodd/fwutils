@@ -1,9 +1,10 @@
-package de.higger.fwutils.wiki.parse.item;
+package de.higger.fwutils.ability.parse.item;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import de.higger.fwutils.wiki.parse.Hyperlink;
+import de.higger.fwutils.wiki.parse.ItemParser;
 
 public class AbilityParser implements ItemParser<AbilityItem> {
 
