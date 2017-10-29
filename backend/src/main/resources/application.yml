@@ -54,6 +54,7 @@ wiki:
                 skip-limit: 10
                 exclusions:
                     - /index.php/Angriffswaffe
+                    - /index.php/Waffe_der_Furcht
             defence-arms: 
                 location: /index.php/Kategorie:Verteidigungswaffen
                 skip-limit: 10
