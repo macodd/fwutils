@@ -13,7 +13,7 @@ import de.higger.fwutils.wiki.exception.ItemParseException;
 import de.higger.fwutils.wiki.parse.Hyperlink;
 import de.higger.fwutils.wiki.parse.ItemParser;
 
-public class ArmParser implements ItemParser<Arm> {
+public class ArmParser implements ItemParser<ArmItem> {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ArmParser.class);
 
@@ -35,9 +35,9 @@ public class ArmParser implements ItemParser<Arm> {
 	}
 
 	@Override
-	public Arm parseItem(final Hyperlink hyperlink, final Document doc) throws ItemParseException {
+	public ArmItem parseItem(final Hyperlink hyperlink, final Document doc) throws ItemParseException {
 
-		final Arm arm = new Arm(hyperlink.getRelativeLocation(), armType);
+		final ArmItem arm = new ArmItem(hyperlink.getRelativeLocation(), armType);
 
 		final Element weaponLayout = doc.select("div#mw-content-text").first();
 
