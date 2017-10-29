@@ -12,7 +12,7 @@ import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourc
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.util.Assert;
 
-import de.higger.fwutils.wiki.parse.item.ParseItem;
+import de.higger.fwutils.wiki.parse.ParseItem;
 
 public class CategoryItemWriter implements ItemWriter<ParseItem> {
 

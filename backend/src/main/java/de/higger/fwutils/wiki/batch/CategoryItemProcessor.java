@@ -6,8 +6,8 @@ import org.springframework.util.Assert;
 
 import de.higger.fwutils.wiki.parse.CategoryParser;
 import de.higger.fwutils.wiki.parse.Hyperlink;
-import de.higger.fwutils.wiki.parse.item.ItemParser;
-import de.higger.fwutils.wiki.parse.item.ParseItem;
+import de.higger.fwutils.wiki.parse.ItemParser;
+import de.higger.fwutils.wiki.parse.ParseItem;
 
 public class CategoryItemProcessor implements ItemProcessor<Hyperlink, ParseItem> {
 

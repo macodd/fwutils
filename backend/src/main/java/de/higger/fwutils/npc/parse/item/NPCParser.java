@@ -1,4 +1,4 @@
-package de.higger.fwutils.wiki.parse.item;
+package de.higger.fwutils.npc.parse.item;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import de.higger.fwutils.wiki.exception.ItemParseException;
 import de.higger.fwutils.wiki.parse.Hyperlink;
+import de.higger.fwutils.wiki.parse.ItemParser;
 
 public class NPCParser implements ItemParser<NPC> {
 

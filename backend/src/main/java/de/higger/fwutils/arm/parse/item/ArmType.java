@@ -1,4 +1,4 @@
-package de.higger.fwutils.wiki.parse.item;
+package de.higger.fwutils.arm.parse.item;
 
 public enum ArmType {
 	OFFENCE, DEFENCE

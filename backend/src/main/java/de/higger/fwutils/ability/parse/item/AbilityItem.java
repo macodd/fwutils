@@ -1,4 +1,6 @@
-package de.higger.fwutils.wiki.parse.item;
+package de.higger.fwutils.ability.parse.item;
+
+import de.higger.fwutils.wiki.parse.ParseItem;
 
 public class AbilityItem extends ParseItem {
 
