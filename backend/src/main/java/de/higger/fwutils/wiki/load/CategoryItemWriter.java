@@ -35,7 +35,7 @@ public class CategoryItemWriter implements ItemWriter<ParseItem> {
 	@BeforeStep
 	public void prepareWriter() {
 
-		LOG.info("Prepare writer with statement {}", upsertStatement);
+		LOG.debug("Prepare writer with statement {}", upsertStatement);
 
 		final JdbcBatchItemWriter<ParseItem> writer = new JdbcBatchItemWriter<>();
 		writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
