@@ -48,6 +48,7 @@ public class ImportBatchConfiguration {
 		final Step step = stepBuilderFactory
 				.get(String.format(STEP_NAME_PATTERN, jobNameExtension)).<Hyperlink, ParseItem> chunk(1)
 				.faultTolerant().skip(Exception.class).skipLimit(category.getSkipLimit())
+				.listener(new CategorySkipListener())
 				.reader(new CategoryItemReader(this.categoryParser, category))
 				.processor(new CategoryItemProcessor(this.categoryParser, itemParser))
 				.writer(new CategoryItemWriter(dataSource, statement))

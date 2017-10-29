@@ -23,9 +23,9 @@ public class ImportWikiController {
 	@PostMapping("/test")
 	public void test() throws IOException {
 
-		wikiImportService.importAbilities();
+		// wikiImportService.importAbilities();
 		// wikiImportService.importNPCs();
 		// wikiImportService.importOffenceArms();
-		// wikiImportService.importDefenceArms();
+		wikiImportService.importDefenceArms();
 	}
 }
