@@ -96,5 +96,6 @@ public class WikiImportService {
 				| JobParametersInvalidException e) {
 			LOG.error("Failed to import items: ", e);
 		}
+
 	}
 }

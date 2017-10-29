@@ -22,6 +22,7 @@ wiki:
             npcs: 
                 location: /index.php/Kategorie:NPCs
                 skip-limit: 50
+                cron-schedule: 0 45 1 * * MON,FRI
                 exclusions:
                     - /index.php/Aggressive_NPCs
                     - /index.php/Auftrags-NPC
@@ -41,6 +42,7 @@ wiki:
             abilities: 
                 location: /index.php/Kategorie:Charakterf%C3%A4higkeiten
                 skip-limit: 5
+                cron-schedule: 0 18 2 * * *
                 exclusions:
                     - /index.php/Auftragsbeziehungen/Kopf
                     - /index.php/Auftragsbeziehungen/Nutzen
@@ -52,12 +54,14 @@ wiki:
             offence-arms: 
                 location: /index.php/Kategorie:Angriffswaffen
                 skip-limit: 10
+                cron-schedule: 0 30 3 * * MON,WED,FRI
                 exclusions:
                     - /index.php/Angriffswaffe
                     - /index.php/Waffe_der_Furcht
             defence-arms: 
                 location: /index.php/Kategorie:Verteidigungswaffen
                 skip-limit: 10
+                cron-schedule: 0 30 3 * * TUE,THU,SAT
                 exclusions:
                     - /index.php/Deutschland-Trikot_(W11)
                     - /index.php/Verteidigungswaffe
