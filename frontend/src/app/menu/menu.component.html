@@ -1,0 +1,17 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>apps</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['/ability-calculator']">
+    <mat-icon>local_library</mat-icon>
+    <span>Lernzeitenrechner</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/weapon-consultant']">
+    <mat-icon>content_cut</mat-icon>
+    <span>Waffenfinder</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/fight-emulator']">
+    <mat-icon>whatshot</mat-icon>
+    <span>Kampfsimulatior</span>
+  </button>
+</mat-menu>
