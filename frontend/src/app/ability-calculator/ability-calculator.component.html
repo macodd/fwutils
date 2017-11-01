@@ -1,0 +1,51 @@
+<h2>Lernzeitenrechner</h2>
+<mat-spinner *ngIf="abilities.length <= 0"></mat-spinner>
+
+<div *ngIf="abilities.length > 0">
+	<mat-horizontal-stepper [linear]="'true'">
+		<mat-step [stepControl]="chooseAbilitiesFormGroup">
+			<ng-template matStepLabel>Wähle deine Charakterfähigkeiten</ng-template>
+			<div>
+				<h3>Noch nicht ausgewählte Charakterfähigkeiten</h3>
+				<mat-chip-list>
+				  <mat-chip draggable dragScope="chooseAbility" [dragData]="ability" *ngFor="let ability of notChosenAbilities | sortAbilities">{{ability.name}}</mat-chip>
+				</mat-chip-list>
+			</div>
+			
+			<div>
+				<h3>Deine ausgewählten Charakterfähigkeiten</h3>
+				<div droppable dropScope="chooseAbility" dragHintClass="ability-dropable-area" (onDrop)="onDropToChosenAbilities($event)">
+					<p *ngIf="chosenAbilities.length === 0">Wähle die Charakterfähigkeiten zum Berechnen aus, indem du sie von oben in dieses Feld ziehst.</p>
+					<mat-chip-list>
+				  		<mat-chip removable="true" (remove)="onRemoveFromChosenAbilities(ability)"  *ngFor="let ability of chosenAbilities | sortAbilities">
+				  			{{ability.name}}
+				  			<mat-icon matChipRemove>cancel</mat-icon>
+				  		</mat-chip>
+					</mat-chip-list>
+				</div>   
+			</div>
+			<div>
+        		<button mat-button matStepperNext>Meine Erfahrung eintragen</button>
+      		</div>
+		</mat-step>
+		<mat-step [stepControl]="chooseAbilitiesFormGroup">
+			<ng-template matStepLabel>Ergänze deine aktuelle Erfahrung</ng-template>
+			<div>
+				{{chosenAbilities.length}}
+			</div>
+			<div>
+        		<button mat-button matStepperPrevious>Ausgewählte Charakterfähigkeiten ändern</button>
+        		<button mat-button matStepperNext>Gesamtlernzeit berechnen</button>
+      		</div>
+		</mat-step>
+		<mat-step [stepControl]="chooseAbilitiesFormGroup">
+			<ng-template matStepLabel>Berechne die Lernzeit</ng-template>
+			<div>
+				{{chosenAbilities.length}}
+			</div>
+			<div>
+        		<button mat-button matStepperPrevious>Meine Erfahrung ändern</button>
+      		</div>
+		</mat-step>		
+	</mat-horizontal-stepper>
+</div>
