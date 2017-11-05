@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import de.higger.fwutils.common.service.RestControllerMappingService;
 import de.higger.fwutils.npc.entity.NPC;
 import de.higger.fwutils.npc.repository.NPCRepository;
+import de.higger.fwutils.npc.service.NPCImportService;
 
 @RestController
 @RequestMapping("/api/v1/public/npcs")
@@ -25,6 +26,9 @@ public class NPCController {
 	@Autowired
 	private RestControllerMappingService restControllerMappingService;
 
+	@Autowired
+	private NPCImportService npcImportService;
+
 	@GetMapping
 	public Iterable<NPC> getAllNPCs() {
 		return npcRepository.findAll();
@@ -35,5 +39,10 @@ public class NPCController {
 
 		final Optional<NPC> npc = npcRepository.findById(npcId);
 		return restControllerMappingService.toResponseEntity(npc);
+	}
+
+	@GetMapping("/import")
+	public void importAbilities() {
+		npcImportService.importNPCs();
 	}
 }
