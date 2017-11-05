@@ -2,6 +2,9 @@ server:
     port: 9000
 
 spring:
+    batch:
+        job:
+            enabled: false
     datasource:
         url: jdbc:postgresql://localhost:5432/fwdb
         username: fwdb

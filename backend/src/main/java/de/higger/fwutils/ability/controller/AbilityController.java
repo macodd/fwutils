@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import de.higger.fwutils.ability.entity.Ability;
 import de.higger.fwutils.ability.repository.AbilityRepository;
+import de.higger.fwutils.ability.service.AbilityImportService;
 import de.higger.fwutils.common.service.RestControllerMappingService;
 
 @RestController
@@ -21,6 +22,9 @@ public class AbilityController {
 
 	@Autowired
 	private AbilityRepository abilityRepository;
+
+	@Autowired
+	private AbilityImportService abilityImportService;
 
 	@Autowired
 	private RestControllerMappingService restControllerMappingService;
@@ -35,5 +39,10 @@ public class AbilityController {
 
 		final Optional<Ability> ability = abilityRepository.findById(abilityId);
 		return restControllerMappingService.toResponseEntity(ability);
+	}
+
+	@GetMapping("/import")
+	public void importAbilities() {
+		abilityImportService.importAbilities();
 	}
 }

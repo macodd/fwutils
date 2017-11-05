@@ -13,6 +13,7 @@ import de.higger.fwutils.arm.entity.DefenceArm;
 import de.higger.fwutils.arm.entity.OffenceArm;
 import de.higger.fwutils.arm.repository.DefenceArmRepository;
 import de.higger.fwutils.arm.repository.OffenceArmRepository;
+import de.higger.fwutils.arm.service.ArmImportService;
 import de.higger.fwutils.common.service.RestControllerMappingService;
 
 @RestController
@@ -30,6 +31,9 @@ public class ArmController {
 
 	@Autowired
 	private RestControllerMappingService restControllerMappingService;
+
+	@Autowired
+	private ArmImportService armImportService;
 
 	@GetMapping("/offence-arms")
 	public Iterable<OffenceArm> getAllOffenceArms() {
@@ -53,5 +57,15 @@ public class ArmController {
 
 		final Optional<DefenceArm> defenceArm = defenceArmRepository.findById(defenceArmId);
 		return restControllerMappingService.toResponseEntity(defenceArm);
+	}
+
+	@GetMapping("/defence-arms/import")
+	public void importDefenceArms() {
+		armImportService.importDefenceArms();
+	}
+
+	@GetMapping("/offence-arms/import")
+	public void importOffenceArms() {
+		armImportService.importOffenceArms();
 	}
 }
